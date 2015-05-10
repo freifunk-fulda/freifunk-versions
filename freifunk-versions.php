@@ -19,7 +19,7 @@ Origin Author URI: http://mschuette.name/
 Origin Licence: 2-clause BSD
 */
 
-define( 'GLUON_STABLE_BASEDIR', 'http://download.westpfalz.freifunk.net/stable/' );
+define( 'GLUON_STABLE_BASEDIR', 'http://firmware.freifunk-fulda.de/stable/current/' );
 define( 'GLUON_CACHETIME', 15 );
 
 /* gets metadata from URL, handles caching */
@@ -121,7 +121,7 @@ function gluon_shortcode_versions( $atts, $content, $name ) {
 				$filename, $hw_ver
 			);
 		}
-		$outstr .= '<td>' . join( ', ', $hw_ver_links ) . '</td>';
+		$outstr .= '<td>Hardware Version ' . join( ', ', $hw_ver_links ) . '</td>';
 
 		// sysupgrade versions
 		$hw_ver_links = array();
@@ -132,7 +132,7 @@ function gluon_shortcode_versions( $atts, $content, $name ) {
 				$filename, $hw_ver
 			);
 		}
-		$outstr .= '<td>' . join( ', ', $hw_ver_links ) . '</td>';
+		$outstr .= '<td>Hardware Version ' . join( ', ', $hw_ver_links ) . '</td>';
 
 		$outstr .= '</tr>';
 	}
