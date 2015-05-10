@@ -108,8 +108,13 @@ function gluon_shortcode_versions( $atts, $content, $name ) {
 		if ( $grep && ( false === strpos( $hw, $grep ) ) ) {
 			continue;
 		}
-		$hw = gluon_beautify_hw_name( $hw, $grep );
-		$outstr .= sprintf( "\n<tr><td>%s</td>", $hw );
+		$hw = trim(gluon_beautify_hw_name( $hw, $grep ));
+
+		$ddgIcon = '<img src="/wp-content/uploads/2015/05/ddg_icon_20x20.png" />';
+                $ddgSearch = preg_replace('!(\ |/)[a-zA-Z0-9].*!','',$hw);
+                $ddgLink = "https://duckduckgo.com/?q=" . $ddgSearch . "&ia=products&kl=de-de";
+
+		$outstr .= sprintf( "\n<tr><td><a href=\"%s\" target=\"_BLANK\">%s</a> %s</td>",$ddgLink, $ddgIcon, $hw);
 
 		// factory versions
 		$hw_ver_links = array();
