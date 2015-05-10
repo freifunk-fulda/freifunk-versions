@@ -121,7 +121,7 @@ function gluon_shortcode_versions( $atts, $content, $name ) {
 		foreach ( $versions as $hw_ver => $filename ) {
 			$filename = str_replace( '-sysupgrade', '', $filename );
 			$hw_ver_links[] = sprintf(
-				'<a href="%s%s">v%s</a>',
+				'<a href="%s%s">%s.x</a>',
 				GLUON_STABLE_BASEDIR.'factory/',
 				$filename, $hw_ver
 			);
@@ -132,7 +132,7 @@ function gluon_shortcode_versions( $atts, $content, $name ) {
 		$hw_ver_links = array();
 		foreach ( $versions as $hw_ver => $filename ) {
 			$hw_ver_links[] = sprintf(
-				'<a href="%s%s">v%s</a>',
+				'<a href="%s%s">%s.x</a>',
 				GLUON_STABLE_BASEDIR.'sysupgrade/',
 				$filename, $hw_ver
 			);
